@@ -18,6 +18,8 @@ import { JobDetailComponent } from './components/jobdetail/jobdetail.component';
 import { SecurityGaurdService } from '../app/services/securitygaurd.service';
 import { PaymentComponent } from '../app/components/payment/payment.component';
 import { LoginComponent } from '../app/components/login/login.component';
+import { AdminComponent } from '../app/components/admin/admin.component';
+
 
 const routes: Routes = [
   {
@@ -62,6 +64,11 @@ const routes: Routes = [
     canActivate: [SecurityGaurdService],
   },
   { path: 'login', component: LoginComponent },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [SecurityGaurdService],
+  },
 ];
 
 @NgModule({
@@ -77,6 +84,7 @@ const routes: Routes = [
     MyAppsComponent,
     ImageService,
     AlertComponent,
+    AdminComponent,
     AutoRefreshComponent,
     LoginComponent,
   ],
