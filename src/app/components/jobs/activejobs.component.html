@@ -12,25 +12,19 @@
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Name</th>
+        <th scope="col">Job Title</th>
         <th scope="col">Description</th>
-        <th scope="col">Starting Price</th>
-        <th scope="col">Last Bid Price</th>
-        <th scope="col">Remaining Time</th>
-        <th scope="col">Created On</th>
-        <th scope="col">Created By</th>
-      </tr>
+        <th scope="col">Location</th>
+        <th scope="col">Contract Type</th>
+       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let auction of auctions" (click)="rowSelected(auction)">
-        <th scope="row">{{ auction.idAuction }}</th>
-        <td>{{ auction.Name }}</td>
-        <td>{{ auction.Description }}</td>
-        <td>{{ auction.StartingPrice | currency }}</td>
-        <td>{{ auction.BidPrice | currency }}</td>
-        <td>{{ auction.ActiveInHours }} hrs.</td>
-        <td>{{ auction.AuctionDate | date: "dd/MM/yyyy h:mm a" }}</td>
-        <td>{{ auction.userName }}</td>
+      <tr *ngFor="let job of jobs" (click)="rowSelected(job)">
+        <th scope="row">{{ job.JobId }}</th>
+        <td>{{ job.JobTitle }}</td>
+        <td>{{ job.Description }}</td>
+        <td>{{ job.Location }}</td>
+        <td>{{ job.ContractType }}</td>
       </tr>
     </tbody>
   </table>

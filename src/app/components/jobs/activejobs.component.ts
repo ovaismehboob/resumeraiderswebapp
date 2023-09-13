@@ -10,8 +10,8 @@ import { AppInsightsService } from 'src/app/app-insights.service';
   templateUrl: './activejobs.component.html',
 })
 export class ActiveJobsComponent {
-  auctions: any;
-  auction: any;
+  jobs: any;
+  job: any;
   loading: boolean = false;
 
   constructor(
@@ -25,21 +25,21 @@ export class ActiveJobsComponent {
     this.getActiveJobs();
   }
 
-  public rowSelected(auction: any) {
-    this.auction = auction;
-    console.log(auction);
+  public rowSelected(job: any) {
+    this.job = job;
+    console.log(job);
 
     this.router.navigate(['/biddetail'], {
-      queryParams: { auction: auction.idAuction },
+      queryParams: { job: job.JobId },
     });
   }
 
   public getActiveJobs() {
     this.loading = true;
-    this.httpClient.get(environment.auctionAPI + '/auctions').subscribe(
+    this.httpClient.get(environment.jobAPI).subscribe(
       (res) => {
-        this.auctions = res;
-        console.log('Active auctions are loaded');
+        this.jobs = res;
+        console.log('Active jobs are loaded');
         console.log(res);
         this.loading = false;
       },

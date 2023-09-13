@@ -13,7 +13,7 @@ import { AlertComponent } from '../app/components/alert/alert.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { MainComponent } from '../app/components/main/main.component';
-import { BidDetailComponent } from '../app/components/biddetail/biddetail.component';
+import { BidDetailComponent } from './components/biddetail/biddetail.component';
 import { SecurityGaurdService } from '../app/services/securitygaurd.service';
 import { PaymentComponent } from '../app/components/payment/payment.component';
 import { LoginComponent } from '../app/components/login/login.component';
@@ -29,7 +29,10 @@ const routes: Routes = [
     component: AuctionComponent,
     canActivate: [SecurityGaurdService],
   },
-  { path: 'jobs', component: ActiveJobsComponent, canActivate: [SecurityGaurdService] },
+  { path: 'jobs', 
+    component: ActiveJobsComponent, 
+    canActivate: [SecurityGaurdService] 
+  },
   {
     path: 'myapps',
     component: MyAppsComponent,

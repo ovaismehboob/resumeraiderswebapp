@@ -6,6 +6,7 @@ export const environment = {
   production: true,
   identityAPI: "http://localhost:5032/api/identity", 
   auctionAPI: "http://localhost:3000/api/auction",
+  jobAPI: "https://resumeraidersapi.azurewebsites.net/api/jobs",
   bidAPI:  "http://localhost:9090/api/bid",
   paymentAPI:  "http://localhost:5000",
   appInsights: {
