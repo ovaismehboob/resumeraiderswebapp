@@ -1,17 +1,15 @@
 export class Job {
     constructor(
-      public JobId: Number,
+      public JobID: Number,
       public JobTitle: String,
       public Description: String,
-      public Location: Number,
+      public Location: String,
       public Salary: Number,
-      public CompanyId: Number,
-      public CategoryId: Number,
+      public CompanyID: Number,
+      public CategoryID: Number,
       public ContractType: String,
       public Benefits: String,
-      public ApplicationProcess: String,
-      public ReportsTo: String,
-      public Tags: String,
+      public Tags: String
     ) {}
   }
   

@@ -1,0 +1,64 @@
+<div class="container">
+  <h3>
+    <img width="30" alt="Job Details" src="assets/images/jobdetail.png" />
+    &nbsp;Job Details
+  </h3>
+  <p>
+  <alert></alert>
+  </p>
+  <hr />
+
+ <div class="form-group">
+    <label>Job Title</label>
+    <input
+      type="text"
+      [(ngModel)]="jobDetail.JobTitle"
+      name="jobTitle"
+      class="form-control"
+      id="jobTitle"
+      #name="ngModel"
+      readonly
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="location">Location</label>
+    <input
+    type="text"
+    [(ngModel)]="jobDetail.Location"
+    name="location"
+    class="form-control"
+    id="location"
+    #name="ngModel"
+    readonly
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="description">Job Description</label>
+    <textarea
+      [(ngModel)]="jobDetail.Description"
+      name="description"
+      class="form-control"
+      rows="3"
+      cols="60"
+      id="description"
+      readonly
+    ></textarea>
+  </div>
+  
+
+  <div class="form-group">
+    <label for="beneifts">Benefits</label>
+    <textarea
+      [(ngModel)]="jobDetail.Benefits"
+      name="benefits"
+      class="form-control"
+      rows="3"
+      cols="60"
+      id="benefits"
+      readonly
+    ></textarea>
+  </div>
+
+</div>

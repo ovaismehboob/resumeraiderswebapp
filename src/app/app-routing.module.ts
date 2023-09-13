@@ -14,6 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { MainComponent } from '../app/components/main/main.component';
 import { BidDetailComponent } from './components/biddetail/biddetail.component';
+import { JobDetailComponent } from './components/jobdetail/jobdetail.component';
 import { SecurityGaurdService } from '../app/services/securitygaurd.service';
 import { PaymentComponent } from '../app/components/payment/payment.component';
 import { LoginComponent } from '../app/components/login/login.component';
@@ -46,6 +47,11 @@ const routes: Routes = [
     canActivate: [SecurityGaurdService],
   },
   {
+    path: 'jobdetail',
+    component: JobDetailComponent,
+    canActivate: [SecurityGaurdService],
+  },
+  {
     path: 'updateprofile',
     component: UpdateProfileComponent,
     canActivate: [SecurityGaurdService],
@@ -62,6 +68,7 @@ const routes: Routes = [
   declarations: [
     MainComponent,
     BidDetailComponent,
+    JobDetailComponent,
     AuctionComponent,
     HomeComponent,
     PaymentComponent,

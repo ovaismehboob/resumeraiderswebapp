@@ -26,11 +26,11 @@ export class ActiveJobsComponent {
   }
 
   public rowSelected(job: any) {
+    console.log("Inside row selected");
     this.job = job;
     console.log(job);
-
-    this.router.navigate(['/biddetail'], {
-      queryParams: { job: job.JobId },
+    this.router.navigate(['/jobdetail'], {
+      queryParams: { job: job.JobID }
     });
   }
 
