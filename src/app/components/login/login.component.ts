@@ -7,7 +7,7 @@ import { AlertService } from '../alert/alert.service';
 import { Logger } from 'msal';
 
 @Component({
-  selector: 'oas-login',
+  selector: 'resumeraider-login',
   templateUrl: './login.component.html',
 })
 export class LoginComponent implements OnInit {
@@ -30,7 +30,12 @@ export class LoginComponent implements OnInit {
       let password = loginForm.form.value.password;
       let user: Loggeduser ={UserId: '1', UserName: 'andrewbrandon@resumeraiders.com'};
       localStorage.setItem('userObject', JSON.stringify(user));
-      this.router.navigate(['/home']);
+      if(userName == 'admin')
+      {
+        this.router.navigate(['/admin']);
+      }else{
+        this.router.navigate(['/home']);
+      }
       /*this.authService
         .login(userName, password)
         .then((res) => {
