@@ -9,7 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { environment } from '../../environments/environment';
 import { AppInsightsService } from 'src/app/app-insights.service';
 import { AuthorizationService } from '../login/authorization.service';
-
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -19,39 +19,14 @@ import { AuthorizationService } from '../login/authorization.service';
 @Component({
   selector: 'newjob',
   templateUrl: './newjob.component.html',
-  providers: [AlertService, AlertComponent],
+  providers: [AlertService, AlertComponent, NgbTooltipModule],
+
 })
 export class NewJobComponent implements OnInit {
   imageFile: any;
   bids: any;
   jobs: any;
   JobID!: number;
-/*  job: Job = new Job(
-    0,
-    '',
-    '',
-    '',
-    0,
-    0,
-    0,
-    '',
-    '',
-    ''
-  );
-
-  jobDetail: JobDetail = new JobDetail(
-    0,
-    '',
-    '',
-    '',
-    0,
-    0,
-    0,
-    '',
-    '',
-    ''
-    );
-*/
   jobDetail: any;
 
   elapsedTime: number = -1;
