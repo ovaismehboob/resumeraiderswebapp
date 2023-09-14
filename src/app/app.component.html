@@ -1,14 +1,15 @@
 <nav class="navbar navbar-inverse navbar-fixed-top bg-dark navbar-dark">
   <div class="container">
-    <h3 class="text-muted">
-      <a [routerLink]="['/home']">
+    <h1 class="navbar-brand">
+      <!-- <a [routerLink]="['/home']">
         <img
           width="70"
           alt="Resume Raiders Logo"
           src="../assets/images/logo-white.png"
         /> </a
-      >&nbsp;
-    </h3>
+        > -->
+        &nbsp;Resume Raiders
+    </h1>
     <div *ngIf="!authorizationService.isUserLoggedIn()">
       <button class="btn btn-default btn-sm btn-primary" type="button" routerLink="/login">
         Login
