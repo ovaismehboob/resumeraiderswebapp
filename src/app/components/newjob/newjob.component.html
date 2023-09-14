@@ -18,10 +18,10 @@
       class="form-control"
       id="jobTitle"
       #name="ngModel"
-      
+
     />
 
-    
+
   </div>
 
 
@@ -32,21 +32,6 @@
     <input type="text" class="form-control" >
     <button class="btn btn-outline-primary" type="button" id="button-addon2" data-toggle="tooltip" data-placement="top" title="Generate tags based on Job Title">Generate</button>
   </div>
-    
-
-  <div class="form-group">
-    <label for="description">Job Description</label>
-    <textarea
-      [(ngModel)]="jobDetail.Description"
-      name="description"
-      class="form-control"
-      rows="3"
-      cols="60"
-      id="description"
-      
-    ></textarea>
-  </div>
-  
 
   <!-- <span class="badge badge-pill bg-primary">Primary</span>
   <span class="badge badge-pill bg-secondary">Secondary</span>
@@ -68,7 +53,7 @@
     class="form-control"
     id="location"
     #name="ngModel"
-    
+
     />
   </div>
 
@@ -80,11 +65,28 @@
       [(ngModel)]="jobDetail.Benefits"
       name="benefits"
       class="form-control"
-      rows="3"
+      rows="2"
       cols="60"
       id="benefits"
-      
+
     ></textarea>
+
+    <div class="form-group">
+      <label for="description">Job Description</label>
+      <textarea
+        [(ngModel)]="jobDetail.Description"
+        name="description"
+        class="form-control"
+        rows="5"
+        cols="60"
+        id="description"
+
+      ></textarea>
+      <button class="btn btn-outline-primary" type="button" id="button-addon3" data-toggle="tooltip" data-placement="top" title="Generate tags based on Job Title">Generate</button>
+    <br><br>
+      <button class="btn btn-outline-primary" type="button" id="button-addon4" data-toggle="tooltip" data-placement="top" title="Generate tags based on Job Title">Save</button>
+    </div>
+
   </div>
 
 </div>

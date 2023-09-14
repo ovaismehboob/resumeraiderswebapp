@@ -4,11 +4,13 @@
 
 export const environment = {
   production: true,
-  identityAPI: "http://localhost:5032/api/identity", 
+  identityAPI: "http://localhost:5032/api/identity",
   auctionAPI: "http://localhost:3000/api/auction",
   jobAPI: "https://resumeraidersapi.azurewebsites.net/api/jobs",
   bidAPI:  "http://localhost:9090/api/bid",
   paymentAPI:  "http://localhost:5000",
+  getTagsAPI: "https://resumeraiderssmartfunctions.azurewebsites.net/api/generatetags",
+  getJobDescriptionAPI: "https://resumeraiderssmartfunctions.azurewebsites.net/api/GenerateJobDescription",
   appInsights: {
     instrumentationKey: "bb020e71-7aac-4c00-a18e-2160307c4bdc",
   },
