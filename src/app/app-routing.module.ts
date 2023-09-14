@@ -19,7 +19,7 @@ import { SecurityGaurdService } from '../app/services/securitygaurd.service';
 import { PaymentComponent } from '../app/components/payment/payment.component';
 import { LoginComponent } from '../app/components/login/login.component';
 import { AdminComponent } from '../app/components/admin/admin.component';
-
+import { NewJobComponent } from '../app/components/newjob/newjob.component';
 
 const routes: Routes = [
   {
@@ -36,6 +36,10 @@ const routes: Routes = [
     component: ActiveJobsComponent, 
     canActivate: [SecurityGaurdService] 
   },
+  { path: 'newjob', 
+  component: NewJobComponent, 
+  canActivate: [SecurityGaurdService] 
+},
   {
     path: 'myapps',
     component: MyAppsComponent,
@@ -87,6 +91,7 @@ const routes: Routes = [
     AdminComponent,
     AutoRefreshComponent,
     LoginComponent,
+    NewJobComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

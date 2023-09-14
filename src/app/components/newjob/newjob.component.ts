@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Job } from '../jobs/job';
-import { JobDetail } from './jobdetail';
+import { NewJob } from './newjob';
 import { ActivatedRoute } from '@angular/router';
 import { AlertComponent } from '../alert/alert.component';
 import { AlertService } from '../alert/alert.service';
@@ -12,12 +12,16 @@ import { AuthorizationService } from '../login/authorization.service';
 
 
 
+
+
+
+
 @Component({
-  selector: 'jobdetail',
-  templateUrl: './jobdetail.component.html',
+  selector: 'newjob',
+  templateUrl: './newjob.component.html',
   providers: [AlertService, AlertComponent],
 })
-export class JobDetailComponent implements OnInit {
+export class NewJobComponent implements OnInit {
   imageFile: any;
   bids: any;
   jobs: any;
