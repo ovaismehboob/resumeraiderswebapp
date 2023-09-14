@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top bg-dark navbar-dark">
   <div class="container">
     <h3 class="text-muted">
       <a [routerLink]="['/home']">
@@ -10,12 +10,12 @@
       >&nbsp;Resume Raiders 
     </h3>
     <div *ngIf="!authorizationService.isUserLoggedIn()">
-      <button class="btn btn-default btn-sm" type="button" routerLink="/login">
+      <button class="btn btn-default btn-sm btn-primary" type="button" routerLink="/login">
         Login
       </button>
     </div>
     <div *ngIf="authorizationService.isUserLoggedIn()">
-      <button class="btn btn-default btn-sm" type="button" (click)="logOut()">
+      <button class="btn btn-default btn-sm btn-danger" type="button" (click)="logOut()">
         Logout
       </button>
     </div>
@@ -47,83 +47,4 @@
   <div>&nbsp;</div>
   <div>&nbsp;</div>
   <div>&nbsp;</div>
-  <!-- Site footer -->
-  <!-- Footer -->
-  <footer class="page-footer font-small blue-grey lighten-5">
-    <div style="background-color: #cbe9f3">
-      <div class="container">
-        <!-- Grid row-->
-        <div class="row py-4 d-flex align-items-left">
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-5 text-left text-md-left mb-4 mb-md-0">
-            <h6 class="mb-0">Get connected with us!</h6>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-7 text-left text-md-right"></div>
-          <!-- Grid column -->
-        </div>
-        <!-- Grid row-->
-      </div>
-    </div>
-
-    <!-- Footer Links -->
-    <div class="container text-left text-md-left mt-8">
-      <!-- Grid row -->
-      <div class="row mt-3 dark-grey-text">
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-8 col-xl-8 mb-8">
-          <!-- Content -->
-          <h6 class="text-uppercase font-weight-bold">Resume Raiders</h6>
-          <hr
-            class="teal accent-3 mb-8 mt-0 d-inline-block mx-auto"
-            style="width: 60px"
-          />
-          <p>
-            <img
-              src="../assets/images/attribute1.png"
-              width="25%"
-              height="25%"
-            />
-            <img
-            src="../assets/images/attribute2.png"
-            width="25%"
-            height="25%"
-          />
-          <img
-          src="../assets/images/attribute3.png"
-          width="25%"
-          height="25%"
-        />
-          </p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div
-          style="
-            background-color: white;
-            border-width: 1cm;
-            align-items: center;
-          "
-          class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4"
-        >
-        </div>
-        <!-- Grid column -->
-      </div>
-      <!-- Grid row -->
-    </div>
-    <!-- Footer Links -->
-
-    <!-- Copyright -->
-    <div
-      style="background-color: rgb(248, 249, 250)"
-      class="footer-copyright text-center text-black -50 py-3"
-    >
-      © 2023 Copyright: Microsoft
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Footer -->
-</div>
+ 
