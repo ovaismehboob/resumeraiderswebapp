@@ -25,7 +25,7 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 export class NewJobComponent implements OnInit {
   imageFile: any;
   bids: any;
-  jobs: any;
+  jobs: any={};
   JobID!: number;
   jobDetail: any;
 
@@ -37,80 +37,33 @@ export class NewJobComponent implements OnInit {
     private route: ActivatedRoute,
     private _sanitizer: DomSanitizer,
     private appInsights: AppInsightsService
-  ) {}
+  ) { }
 
 
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {
-      this.JobID = params.job;
-      console.log("Job ID is "+ this.JobID);
-      this.loadJobDetailByJobId();
+
+
     });
   }
 
-  public refresh() {
-    if (this.elapsedTime < 0 && this.elapsedTime != -1) {
-      this.alertService.add({
-        type: 'warning',
-        message: 'Auction closed now!',
-      });
-    }
-  }
- 
-  public loadJobDetailByJobId() {
-    console.log('Loading Job Detail by Job ID ' + this.JobID);
+
+
+
+
+  public generateTag(title: String) {
+    console.log("Generating Tag");
+    this.jobs.Tags = "Generating Tag ...";
     this.httpClient
-      .get(environment.jobAPI + '/' + this.JobID)
+      .post(environment.getTagsAPI, title,{responseType: 'text'})
       .subscribe(
         (res) => {
-         // var resObj: { [index: string]: any } = res;
-
           console.log('Response is ' + res);
-         // console.log(resObj[0]);
-          this.jobDetail = res;
-          console.log('Job title is ' + this.jobDetail.JobTitle);
-        },
-        (err) => {
-          console.log(err);
-          this.alertService.add({
-            type: 'danger',
-            message: 'Some error occured, please contact Administrator',
-          });
-          this.appInsights.instance.trackException(err);
-        }
-      );
-    this.appInsights.instance.trackEvent({ name: 'LoadedJobDetailbyJobID' });
-  }
-
-  /*
-  public submitBid() {
-   this.loadMakeOffer = true;
-    console.log('submitting Job');
-    this.bidDetail.userId = this.authorizationService.getLoggedUser().UserId;
-    this.bidDetail.userName =
-      this.authorizationService.getLoggedUser().UserName;
-    console.log(this.auction);
-    this.httpClient
-      .post(
-        environment.bidAPI +
-          '/bid?bidAmount=' +
-          this.bidDetail.bidAmount +
-          '&userID=' +
-          this.bidDetail.userId +
-          '&auctionID=' +
-          this.auction.idAuction +
-          '&userName=' +
-          this.bidDetail.userName,
-        this.auction
-      )
-      .subscribe(
-        (res) => {
+          this.jobs.Tags = res;
           this.alertService.add({
             type: 'success',
-            message: 'Bid is made successfully',
+            message: 'Tag Generated Successfully',
           });
-          this.loadPreviousBids();
-          this.loadMakeOffer = false;
         },
         (err) => {
           console.log(err);
@@ -118,12 +71,9 @@ export class NewJobComponent implements OnInit {
             type: 'danger',
             message: 'Some error occured, please contact Administrator',
           });
-          this.loadMakeOffer = false;
           this.appInsights.instance.trackException(err);
         }
       );
-*/
-    //console.log('Job is applied');
-    //this.appInsights.instance.trackEvent({ name: 'SubmittedBid' });
-  //}
+  }
+
 }

@@ -13,24 +13,27 @@
     <label>Job Title</label>
     <input
       type="text"
-      [(ngModel)]="jobDetail.JobTitle"
+      [(ngModel)]="jobs.jobTitle"
       name="jobTitle"
       class="form-control"
-      id="jobTitle"
+      id=""
       #name="ngModel"
 
     />
 
 
   </div>
-
+  
 
   <label>Tags
   </label>
   <div class="form-group input-group ">
 
-    <input type="text" class="form-control" >
-    <button class="btn btn-outline-primary" type="button" id="button-addon2" data-toggle="tooltip" data-placement="top" title="Generate tags based on Job Title">Generate</button>
+    <input type="text" 
+    [(ngModel)]="jobs.Tags"
+    name="tags"
+    class="form-control" >
+    <button (click)="generateTag(jobs.jobTitle)" class="btn btn-outline-primary" type="button" id="button-addon2" data-toggle="tooltip" data-placement="top" title="Generate tags based on Job Title">Generate</button>
   </div>
 
   <!-- <span class="badge badge-pill bg-primary">Primary</span>
@@ -43,12 +46,12 @@
   <span class="badge badge-pill bg-dark">Dark</span> -->
 
 
-
+  <br/>
   <div class="form-group">
     <label for="location">Location</label>
     <input
     type="text"
-    [(ngModel)]="jobDetail.Location"
+    [(ngModel)]="jobs.Location"
     name="location"
     class="form-control"
     id="location"
@@ -58,11 +61,11 @@
   </div>
 
 
-
+  <br/>
   <div class="form-group">
     <label for="beneifts">Benefits</label>
     <textarea
-      [(ngModel)]="jobDetail.Benefits"
+      [(ngModel)]="jobs.Benefits"
       name="benefits"
       class="form-control"
       rows="2"
@@ -70,11 +73,11 @@
       id="benefits"
 
     ></textarea>
-
+<br/>
     <div class="form-group">
       <label for="description">Job Description</label>
       <textarea
-        [(ngModel)]="jobDetail.Description"
+        [(ngModel)]="jobs.Description"
         name="description"
         class="form-control"
         rows="5"
@@ -82,7 +85,7 @@
         id="description"
 
       ></textarea>
-      <button class="btn btn-outline-primary" type="button" id="button-addon3" data-toggle="tooltip" data-placement="top" title="Generate tags based on Job Title">Generate</button>
+      <button class="btn btn-outline-primary" type="button" id="button-addon3" data-toggle="tooltip" data-placement="top" title="Generate tags based on Tag">Generate</button>
     <br><br>
       <button class="btn btn-outline-primary" type="button" id="button-addon4" data-toggle="tooltip" data-placement="top" title="Generate tags based on Job Title">Save</button>
     </div>
