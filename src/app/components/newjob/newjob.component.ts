@@ -12,10 +12,6 @@ import { AuthorizationService } from '../login/authorization.service';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 
-
-
-
-
 @Component({
   selector: 'newjob',
   templateUrl: './newjob.component.html',
@@ -47,13 +43,9 @@ export class NewJobComponent implements OnInit {
     });
   }
 
-
-
-
-
   public generateTag(title: String) {
     console.log("Generating Tag");
-    this.jobs.Tags = "Generating Tag ...";
+    this.jobs.Tags = "Generating Tag .......";
     this.httpClient
       .post(environment.getTagsAPI, title,{responseType: 'text'})
       .subscribe(
@@ -63,6 +55,32 @@ export class NewJobComponent implements OnInit {
           this.alertService.add({
             type: 'success',
             message: 'Tag Generated Successfully',
+          });
+        },
+        (err) => {
+          console.log(err);
+          this.alertService.add({
+            type: 'danger',
+            message: 'Some error occured, please contact Administrator',
+          });
+          this.appInsights.instance.trackException(err);
+        }
+      );
+  }
+
+  
+  public generateJD(tag: String) {
+    console.log("Generating Description");
+    this.jobs.Tags = "Generating Description ...";
+    this.httpClient
+      .post(environment.getJobDescriptionAPI, tag,{responseType: 'text'})
+      .subscribe(
+        (res) => {
+          console.log('Response is ' + res);
+          this.jobs.Description = res;
+          this.alertService.add({
+            type: 'success',
+            message: 'Description Generated Successfully',
           });
         },
         (err) => {
