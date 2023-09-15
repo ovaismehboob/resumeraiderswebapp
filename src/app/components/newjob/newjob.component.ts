@@ -11,7 +11,6 @@ import { AppInsightsService } from 'src/app/app-insights.service';
 import { AuthorizationService } from '../login/authorization.service';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
-
 @Component({
   selector: 'newjob',
   templateUrl: './newjob.component.html',
@@ -52,10 +51,10 @@ export class NewJobComponent implements OnInit {
         (res) => {
           console.log('Response is ' + res);
           this.jobs.Tags = res;
-          this.alertService.add({
+          /* this.alertService.add({
             type: 'success',
             message: 'Tag Generated Successfully',
-          });
+          }); */
         },
         (err) => {
           console.log(err);
@@ -87,7 +86,6 @@ export class NewJobComponent implements OnInit {
       "Tags" : tag
     };
 
-
     this.jobs.Description = "Generating Description ...";
     this.httpClient
       .post(environment.getJobDescriptionAPI, JSON.stringify(this.jobDetail),{responseType: 'text'})
@@ -95,9 +93,51 @@ export class NewJobComponent implements OnInit {
         (res) => {
           console.log('Response is ' + res);
           this.jobs.Description = res;
-          this.alertService.add({
+          /* this.alertService.add({
             type: 'success',
             message: 'Description Generated Successfully',
+          });*/
+        },
+        (err) => {
+          console.log(err);
+          this.alertService.add({
+            type: 'danger',
+            message: 'Some error occurred, please contact Administrator',
+          });
+          this.appInsights.instance.trackException(err);
+        }
+      );
+  }
+
+  public postNewJob(job: any) {
+    console.log("Generating New Job");
+
+    this.jobDetail =
+     {
+      "JobTitle": this.jobs.jobTitle ,
+      "Description": this.jobs.Description,
+      "ContractType": "Temporary",
+      "ApplicationProcess": "apply in the web page and subscribe by email",
+      "ReportsTo" : "hiringmanager@company.com",
+      "Location" :  this.jobs.Location,
+      "Salary": 100000,
+      "Benefits" : this.jobs.Benefits,
+      "CompanyID": 27,
+      "CategoryID": 27,
+      "CompanyAbout" :"Microsoft Corporation is an American multinational technology company with headquarters in Redmond, Washington. It develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services." ,
+      "Tags" : this.jobs.Tags
+    };
+
+    //this.jobs.Description = "Generating Description ...";
+    this.httpClient
+      .post(environment.PostNewJob, JSON.stringify(this.jobDetail),{responseType: 'text'})
+      .subscribe(
+        (res) => {
+          console.log('Response is ' + res);
+          //this.jobs.Description = res;
+          this.alertService.add({
+            type: 'success',
+            message: 'Position Posted Successfully',
           });
         },
         (err) => {
@@ -111,4 +151,7 @@ export class NewJobComponent implements OnInit {
       );
   }
 
+
 }
+
+

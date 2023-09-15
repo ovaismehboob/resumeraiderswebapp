@@ -11,6 +11,7 @@ export const environment = {
   paymentAPI:  "http://localhost:5000",
   getTagsAPI: "https://resumeraiderssmartfunctions.azurewebsites.net/api/generatetags",
   getJobDescriptionAPI: "https://resumeraiderssmartfunctions.azurewebsites.net/api/GenerateJobDescription",
+  PostNewJob:"https://resumeraidersapi.azurewebsites.net/api/jobs",
   appInsights: {
     instrumentationKey: "bb020e71-7aac-4c00-a18e-2160307c4bdc",
   },
