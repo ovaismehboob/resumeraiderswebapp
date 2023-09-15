@@ -71,9 +71,26 @@ export class NewJobComponent implements OnInit {
 
   public generateJD(tag: String) {
     console.log("Generating Description");
-    this.jobs.Tags = "Generating Description ...";
+
+    //texttest: '';
+    this.jobDetail =
+     {
+      "JobTitle": this.jobs.jobTitle ,
+      "ContractType": "Temporary",
+      "ApplicationProcess": "apply in the web page and subscribe by email",
+      "ReportsTo" : "hiringmanager@company.com",
+      //"Location" : "UAE",
+      "Location" :  this.jobs.Location,
+      //"Benefits" : "competitive salary, working from home",
+      "Benefits" : this.jobs.Benefits,
+      "CompanyAbout" :"Microsoft Corporation is an American multinational technology company with headquarters in Redmond, Washington. It develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services." ,
+      "Tags" : tag
+    };
+
+
+    this.jobs.Description = "Generating Description ...";
     this.httpClient
-      .post(environment.getJobDescriptionAPI, tag,{responseType: 'text'})
+      .post(environment.getJobDescriptionAPI, JSON.stringify(this.jobDetail),{responseType: 'text'})
       .subscribe(
         (res) => {
           console.log('Response is ' + res);
@@ -87,7 +104,7 @@ export class NewJobComponent implements OnInit {
           console.log(err);
           this.alertService.add({
             type: 'danger',
-            message: 'Some error occured, please contact Administrator',
+            message: 'Some error occurred, please contact Administrator',
           });
           this.appInsights.instance.trackException(err);
         }

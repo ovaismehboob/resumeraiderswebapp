@@ -24,7 +24,7 @@
     <span class="material-symbols-outlined input-group-text">
       sell
     </span>
-    <input type="text" [(ngModel)]="jobs.Tags" name="tags" class="form-control">
+    <input type="text" [(ngModel)]="jobs.Tags" name="tags" class="form-control" id="Tags">
     <button (click)="generateTag(jobs.jobTitle)" class="btn btn-outline-primary" type="button" id="button-addon2"
       data-toggle="tooltip" data-placement="top" title="Generate tags based on Job Title">Generate
 
@@ -35,8 +35,8 @@
     </button>
   </div>
   <br />
-  <label for="location">Location</label>
 
+  <label for="location">Location</label>
   <div class="form-group input-group">
 
     <span class="material-symbols-outlined input-group-text">
@@ -44,11 +44,22 @@
     </span>
     <input type="text" [(ngModel)]="jobs.Location" name="location" class="form-control" id="location" #name="ngModel" />
   </div>
+
+
   <br />
+  <div class="form-group">
+    <label for="beneifts">Benefits</label>
+    <textarea [(ngModel)]="jobs.Benefits" name="benefits" class="form-control" rows="2" cols="60"
+      id="benefits"></textarea>
+    <br />
+  </div>
+
+  <br />
+
   <label>Job Description</label>
   <div class="form-group input-group">
 
-    <textarea [(ngModel)]="jobs.Description" name="description" class="form-control" rows="3" cols="60"
+    <textarea [(ngModel)]="jobs.Description" name="description" class="form-control" rows="5" cols="60"
       id="description"></textarea>
     <button (click)="generateJD(jobs.Tags)" class="btn btn-outline-primary" type="button" id="button-addon3"
       data-toggle="tooltip" data-placement="top" title="Generate Description based on Tags">Generate
@@ -66,18 +77,6 @@
 
 
   <br />
-
-
-
-  <br />
-  <div class="form-group">
-    <label for="beneifts">Benefits</label>
-    <textarea [(ngModel)]="jobs.Benefits" name="benefits" class="form-control" rows="3" cols="60"
-      id="benefits"></textarea>
-    <br />
-
-
-  </div>
   <br />
   <br />
   <div class="d-grid gap-2 col-6 mx-auto">
