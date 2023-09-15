@@ -134,7 +134,6 @@ export class NewJobComponent implements OnInit {
       .subscribe(
         (res) => {
           console.log('Response is ' + res);
-          //this.jobs.Description = res;
           this.alertService.add({
             type: 'success',
             message: 'Position Posted Successfully',

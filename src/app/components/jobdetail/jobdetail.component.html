@@ -21,9 +21,6 @@
     />
   </div>
 
-  
-  
-
   <div class="form-group">
     <label for="location">Location</label>
     <input
@@ -38,28 +35,27 @@
   </div>
 
   <div class="form-group">
-    <label for="description">Job Description</label>
-    <textarea
-      [(ngModel)]="jobDetail.Description"
-      name="description"
-      class="form-control"
-      rows="3"
-      cols="60"
-      id="description"
-      readonly
-    ></textarea>
-  </div>
-  
-
-  <div class="form-group">
     <label for="beneifts">Benefits</label>
     <textarea
       [(ngModel)]="jobDetail.Benefits"
       name="benefits"
       class="form-control"
-      rows="3"
+      rows="1"
       cols="60"
       id="benefits"
+      readonly
+    ></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Job Description</label>
+    <textarea
+      [(ngModel)]="jobDetail.Description"
+      name="description"
+      class="form-control"
+      rows="20"
+      cols="60"
+      id="description"
       readonly
     ></textarea>
   </div>
