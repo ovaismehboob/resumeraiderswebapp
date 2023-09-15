@@ -61,14 +61,14 @@ export class NewJobComponent implements OnInit {
           console.log(err);
           this.alertService.add({
             type: 'danger',
-            message: 'Some error occured, please contact Administrator',
+            message: 'Some error occurred, please contact Administrator',
           });
           this.appInsights.instance.trackException(err);
         }
       );
   }
 
-  
+
   public generateJD(tag: String) {
     console.log("Generating Description");
     this.jobs.Tags = "Generating Description ...";
