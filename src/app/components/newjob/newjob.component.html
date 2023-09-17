@@ -25,10 +25,10 @@
       sell
     </span>
     <input type="text" [(ngModel)]="jobs.Tags" name="tags" class="form-control" id="Tags">
-    <button (click)="generateTag(jobs.jobTitle)" class="btn btn-outline-primary" type="button" id="button-addon2"
+    <button (click)="generateTag(jobs.jobTitle)" class="btn btn-info" type="button" id="button-addon2"
       data-toggle="tooltip" data-placement="top" title="Generate tags based on Job Title">Generate
 
-      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
+      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-black">
         Copilot
         <span class="visually-hidden">unread messages</span>
       </span>
@@ -61,10 +61,10 @@
 
     <textarea [(ngModel)]="jobs.Description" name="description" class="form-control" rows="10" cols="60"
       id="description"></textarea>
-    <button (click)="generateJD(jobs.Tags)" class="btn btn-outline-primary" type="button" id="button-addon3"
+    <button (click)="generateJD(jobs.Tags)" class="btn btn-info" type="button" id="button-addon3"
       data-toggle="tooltip" data-placement="top" title="Generate Description based on Tags">Generate
 
-      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
+      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-black">
         Copilot
         <span class="visually-hidden">unread messages</span>
       </span>
