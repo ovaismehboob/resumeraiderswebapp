@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top bg-dark navbar-dark">
+<nav class="navbar navbar-inverse navbar-fixed-top bg-dark navbar-dark bg-opacity-75">
   <div class="container">
       <a [routerLink]="['/home']">
         <img
@@ -19,13 +19,15 @@
     </div>
   </div>
 </nav>
-<div class="container">
-  <div class="bg-light p-5 rounded-lg">
+
+
+<div class="container" >
+  <!-- <div class="bg-light p-5 rounded-lg">
     <h1>{{ title }}</h1>
     <p class="lead">
       Discover how AI Copilot can help you find the best talent for your company with its innovative and adventurous features.
     </p>
-  </div>
+  </div> -->
   <p>&nbsp;</p>
   <div
     *ngIf="!authorizationService.isUserLoggedIn()"
@@ -44,4 +46,7 @@
   <div>&nbsp;</div>
   <div>&nbsp;</div>
   <div>&nbsp;</div>
-  <div>&nbsp;</div>
+  <div>&nbsp;
+
+  </div>
+ 
